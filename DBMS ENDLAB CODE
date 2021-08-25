@@ -1,0 +1,60 @@
+create database sdp1;
+use sdp1;
+create table Company (food_item varchar(45),Ordering_Store_Code varchar(45),Ordering_Store_Name varchar(45),city varchar(45), Orders int,COD int,Prepaid  int, Sales int,reward int,Final_reward int);
+insert into Company values('Manchuriya','	3767','	PMC',' VIJAYAWADA',	14,	96993.98,	0,	96993.98,	485,	485);
+insert into Company values('Biryani','	5645','FOOD NEST','GUNTUR',	12,	96000,	0,	96000,	480,	480);
+insert into Company values('chilly baby corn','	5624','	LEPL CENTROL MALL', 'TADIGADAPA',	16,	59200,	0	,59200	,296,	296);
+insert into Company values('spicy chicken','	5444','	HEERA FUSION','PORANKI',	11,	43900,	0,	43900,	0,	0);
+insert into Company values('mushroom manchurian','	5446	','BARKASS ARABIC', 'VIJAYAWADA',	11,	29200,	10000,	39200,	0,	0);
+insert into Company values('Tomato soup','	5982','	DLF MALL','VUYYURU',	5,	20000,	0	,20000,	0,	0);
+insert into Company values('Rumali roti','	TC70','	RASOIE','NUTAKI',	4,	13000,	3000	,16000,	0,	0);
+insert into Company values('veg meals','	TCT8','	ELANTE MALL','	PENAMALLURU',	9,	45500,	0	,45500,	0,	0);
+insert into Company values('masala rice','	TR25','	 BURGER KING',	'GUNTUR',	6,	20900,	0,	20900,	0,	0);
+insert into Company values('parotta','	ECV6','	CP-FUN',' KANUR',	31,	45046.17,	13855.19	,58901.36,	624,	624);
+insert into Company values('egg burji','	ECA8','	CP-LOUDON',' MANGALAGIRI	',19,	0,	25440.5	,25440.5	,254,	254);
+insert into Company values('mutton biryani','	ECY1','	CP-GK1','	TENALI',	34,	38932.45,	0,	38932.45	,195,	195);
+insert into Company values('chicken fried rice','	ECO1','	CP-VIVA',' KANKIPADU',	27	,30346.2,	0,	30346.2	,152	,152);
+insert into Company values('veg noodles','	CH4','	MONKS','	NUNNA',	10,	9995,	0,	9995,	0,	0);
+insert into Company values('butter dal fry','	CQ1','	KAIZENS','	DUGGIRALA',	8,	7747.5,	3498.5,	11246,	0,	0);
+insert into Company values('paneer butter masala','	ECA2','	BARBEQUE PRIDE','	GANNAVARAM'	,2,	1699,	0	,1699,	0,	0);
+insert into Company values('paneer chilly','	ECA3','	JUMPING BEANS','	VADDESWARAM',	1,	2699,	0	,2699	,0,	0);
+insert into Company values('masala dosa','	ECG7','	DV MANOR','	VIJAYAWADA',	8,	11335.8,	0,	11335.8,	0,	0);
+insert into Company values('prawns masala','	ECX4	','SWEET MAGIC	','JONNALAGADDA	' ,2	,2948.89	,0	,2948.89	,0	,0);
+ select * from Company;
+ create table employee(id int not null, name varchar(45) not null,manager int, comp_id int not null);
+insert into employee values(100001,'	Vishal',	100002,	1004);
+insert into employee values(100002,	'Kanak',	100005,	1006);
+insert into employee values(100003,	'Dinesh',	100001,	1002);
+insert into employee values(100004,	'Rajesh',	100003,	1001);
+insert into employee values(100005,'	Rohan	',100001,	1007);
+insert into employee values(100006,'	Manisha	',100004,	1008);
+insert into employee values(100007,'	Prabhat	',100005,	1006);
+insert into employee values(100008,'	Abhishek',	100007,	1007);
+select * from employee;
+ create table customer(cid int primary key not null, cname varchar(45) not null,address varchar(45) not null, phone bigint not null, category varchar(45) not null);
+ insert into customer values(100,	'Raju',	'vijayawada',	9876045789,	'COD');
+ insert into customer values(101,	'Hari',	'guntur',	8877678956,	'Online');
+ insert into customer values(102,	'Devi',	'tadigadapa',	7879312123,'COD');
+ insert into customer values(103,	'Rani',	'poranki',	8780945290,	'COD');
+ insert into customer values(104,	'Jaya',	'vijayawada',	9612578457	,'COD');
+ insert into customer values(105,	'Haritha',	'vuyyuru',	9611665513,	'Online');
+ insert into customer values(106,	'Kalyan',	'nutaki',	9610752569,	'Online');
+ insert into customer values(107,	'Roja',	'penamalluru',	9609839625,	'Online');
+ insert into customer values(108,	'Amar',	'guntur',	9608926681,	'Online');
+ insert into customer values(109,	'Padma',	'kanur',	9608013737,	'COD');
+ select * from customer;
+ create table current_back_order(partno int primary key ,orgqty int , remqty int ,bodate date,backorder varchar(45));
+insert into current_back_order values (1000,1000,	500,	'2020-03-10','arun'),
+(1005	,500,	300,	'2020-02-15'	,'kiran'),
+(1007	,700,	400,	'2020-03-12'	,'raju'),
+(1008	,800,	600,	'2020-04-11'	,'david'),
+(1009	,600,	400,	'2020-06-20'	,'eswar');
+select * from current_back_order;
+create table old_backorder(partno int primary key ,orgqty int , bodate date,backorder varchar(45),fullfilled varchar(45));
+insert into old_backorder  values(1000,	1000,	'2020-03-10',	'arun',	'yes'),
+(1005,	500,	'2020-02-15'	,'kiran',	'no'),
+(1007,	700,	'2020-03-12'	,'raju',	'yes'),
+(1008,	800,	'2020-04-11'	,'david',	'yes'),
+(1009,	600,	'2020-06-20'	,'eswar',	'yes');
+select * from old_backorder;
+
